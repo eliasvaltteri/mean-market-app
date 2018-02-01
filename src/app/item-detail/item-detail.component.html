@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>{{ item.title }}</h1>
+  <dl class="list">
+    <dt>Seller</dt>
+    <dd>{{ item.author }}</dd>
+    <dt>Description</dt>
+    <dd>{{ item.description }}</dd>
+    <dt>Updated</dt>
+    <dd>{{ item.updated_date | date:'short' }}</dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/item-edit', item._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteItem(item._id)">DELETE</button>
+  </div>
+</div>
